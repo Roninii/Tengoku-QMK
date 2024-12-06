@@ -98,7 +98,7 @@ const uint16_t PROGMEM combo8[] = { MEH_T(KC_X), ALL_T(KC_C), COMBO_END};
 const uint16_t PROGMEM combo9[] = { ALL_T(KC_C), KC_D, COMBO_END};
 const uint16_t PROGMEM combo10[] = { ALL_T(KC_C), KC_D, COMBO_END};
 const uint16_t PROGMEM combo11[] = { KC_U, KC_Y, COMBO_END};
-const uint16_t PROGMEM combo12[] = { KC_L, KC_Y, COMBO_END};
+const uint16_t PROGMEM combo12[] = { LSFT_T(KC_U), LSFT_T(KC_Y), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_TAB),
@@ -219,12 +219,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_1:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_Y) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_U));
+      SEND_STRING(SS_TAP(X_Y) SS_TAP(X_O) SS_TAP(X_U));
     }
     break;
     case ST_MACRO_2:
     if (record->event.pressed) {
-      SEND_STRING(SS_LSFT(SS_TAP(X_Y)) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_U));
+      SEND_STRING(SS_LSFT(SS_TAP(X_Y)) SS_TAP(X_O) SS_TAP(X_U));
     }
     break;
     case ST_MACRO_3:
